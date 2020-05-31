@@ -1,0 +1,27 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": " A restaurant app that lets users input the names of burgers they'd like to eat.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WillV1/burger.git"
+  },
+  "keywords": [
+    "eat-da-burger"
+  ],
+  "author": "William VanHook",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WillV1/burger/issues"
+  },
+  "homepage": "https://github.com/WillV1/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
