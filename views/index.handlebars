@@ -31,7 +31,7 @@
     event.preventDefault();
 
     let newBurger = {
-      name: $("#burger_name").val().trim()
+      burger_name: $("#burger_name").val().trim()
     };
 
     // Send the POST request.
@@ -46,7 +46,7 @@
     );
   });
 
-  {{!-- $("#devburger").on("submit", function(event)  {
+  $("#devburger").on("submit", function(event)  {
     event.preventDefault();
 
     let id = $("[name=id]").val().trim();
@@ -65,5 +65,5 @@
         location.reload();
       }
     );
-  }); --}}
+  }); 
 </script>

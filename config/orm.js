@@ -1,14 +1,14 @@
 const connection = require("./connection.js")
 
-function printQuestionMarks(num) {
-    var arr = [];
+// function printQuestionMarks(num) {
+//     var arr = [];
   
-    for (var i = 0; i < num; i++) {
-      arr.push("?");
-    }
+//     for (var i = 0; i < num; i++) {
+//       arr.push("?");
+//     }
   
-    return arr.toString();
-  }
+//     return arr.toString();
+//   }
 
 function objToSql(ob) {
     var arr = [];
@@ -44,7 +44,7 @@ const orm = {
     },
 
     insertOne: function (table, cols, vals, cb) {
-        var queryString = `INSERT INTO ` + table + ` (` + cols.toString() + `) VALUES (` + printQuestionMarks(vals.length) + `)`;
+        var queryString = `INSERT INTO ` + table + ` (` + cols.toString() + `) VALUES ( ? )`;
 
         console.log(queryString);
 
