@@ -1,0 +1,73 @@
+<h1>Eat-Da-Burger!</h1>
+
+<ul>
+  {{#each burgers}}
+ <li>
+    <p>
+      {{this.id}}. {{this.burger_name}}
+
+      <button data-burgid="{{this.id}}" class="devburger">Devour It!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+
+
+<form class="create-form">
+
+  <div class="form-group">
+    <textarea id="burger" name="burger" rows="8" cols="40"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+  <label for="burgers">Enter a burger you want to eat! Click the "Submit" button.</label>
+</form>
+
+
+<script type="text/javascript">
+ 
+  $("#addburger").on("submit", function(event) {
+    event.preventDefault();
+
+    var newPlan = {
+      plan: $("#addburger [name=burger]").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/burger", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("added new burger");
+ 
+        location.reload();
+      }
+    );
+  });
+
+  {{!-- $("#updateplan").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    // Get the ID by finding an element with a "name" attribute equal to the string "id"
+    var id = $("[name=id]").val().trim();
+
+    var updatedPlan = {
+      plan: $("#updateplan [name=plan]").val().trim()
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/plans/" + id, {
+      type: "PUT",
+      data: updatedPlan
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  }); --}}
+</script>
