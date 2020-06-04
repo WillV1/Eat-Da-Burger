@@ -1,49 +1,33 @@
 <h1>Eat-Da-Burger!</h1>
 
 <ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burger/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-{{!-- <ul>
     {{#each burgers}}
-    
+    {{#unless devoured}}
     <li>
         <p>
             {{this.id}}. {{this.burger_name}}
-
-            <button class="change-status" data-id="{{id}}" data-newburger="{{new}}">
-                {{#if new}}{{else}}DEVOUR IT!{{/if}}
+            <button class="change-status" data-id="{{id}}" data-newburger="true">
+                Devour IT
             </button>
         </p>
     </li>
+    {{/unless}}
     {{/each}}
-</ul> --}}
 
+</ul>
+
+<h1>Burgers devoured</h1>
 <ul>
     {{#each burgers}}
     {{#if devoured}}
-    {{> burger/burger-block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-
-{{!-- <ul>
-    {{#each burgers}}
     <li>
         <p>
             {{this.id}}. {{this.burger_name}}
-            <button class="change-status" data-id="{{id}}" data-newburger="{{devoured}}">
-                {{#if devoured}}{{else}}DEVOUR IT!{{/if}}
-            </button>
         </p>
     </li>
+    {{/if}}
     {{/each}}
-</ul> --}}
+</ul>
 
 
 
