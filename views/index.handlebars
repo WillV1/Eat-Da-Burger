@@ -1,69 +1,95 @@
 <h1>Eat-Da-Burger!</h1>
 
-<ul>
-  {{#each burgers}}
- <li>
-    <p>
-      {{this.id}}. {{this.burger_name}}
+{{!-- <ul>
+    {{#each burgers}}
+    
+    <li>
+        <p>
+            {{this.id}}. {{this.burger_name}}
 
-      <button data-burgid="{{this.id}}" class="devburger">Devour It!</button>
-    </p>
-  </li>
-  {{/each}}
+            <button class="change-status" data-id="{{id}}" data-newburger="{{new}}">
+                {{#if new}}{{else}}DEVOUR IT!{{/if}}
+            </button>
+        </p>
+    </li>
+    {{/each}}
+</ul> --}}
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burger/burger-block devoured=true}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+<ul>
+    {{#each burgers}}
+    <li>
+        <p>
+            {{this.id}}. {{this.burger_name}}
+            <button class="change-status" data-id="{{id}}" data-newburger="{{devoured}}">
+                {{#if devoured}}{{else}}DEVOUR IT!{{/if}}
+            </button>
+        </p>
+    </li>
+    {{/each}}
 </ul>
 
 
 
 <form class="create-form">
 
-  <div class="form-group">
-    <textarea id="burger_name" name="burger_name" rows="8" cols="40"></textarea>
-  </div>
+    <div class="form-group">
+        <textarea id="burger_name" name="burger_name" rows="8" cols="40"></textarea>
+    </div>
 
-  <button type="submit">Submit</button>
-  <label for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
+    <button type="submit">Submit</button>
+    <label for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
 </form>
 
 
 <script type="text/javascript">
- 
-  $(".create-form").on("submit", function(event) {
-    event.preventDefault();
 
-    let newBurger = {
-      burger_name: $("#burger_name").val().trim()
-    };
+    $(".change-status").on("click", function (event) {
+        let id = $(this).data("id");
+        let newBurger = $(this).data("newburger");
 
-    // Send the POST request.
-    $.ajax("/api/burger", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("added new burger");
-        location.reload();
-      }
-    );
-  });
+        let newBurgerStatus = {
+            devoured: newBurger
+        };
 
-  $("#devburger").on("submit", function(event)  {
-    event.preventDefault();
+        // Send the PUT request.
+        $.ajax("/api/burger/" + id, {
+            type: "PUT",
+            data: newBurgerStatus
+        }).then(
+            function () {
+                console.log("changed status to", newBurger);
+                location.reload();
+            }
+        );
+    });
 
-    let id = $("[name=id]").val().trim();
+    $(".create-form").on("submit", function (event) {
+        event.preventDefault();
 
-    let updatedPlan = {
-      plan: $("#devourburger [name=burger]").val().trim()
-    };
+        let newBurger = {
+            burger_name: $("#burger_name").val().trim()
+        };
 
-    // Send the PUT request.
-    $.ajax("/api/burger/" + id, {
-      type: "PUT",
-      data: devourBurger
-    }).then(
-      function() {
-        console.log("devoured ", id);
-        location.reload();
-      }
-    );
-  }); 
+        // Send the POST request.
+        $.ajax("/api/burger", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("added new burger");
+                location.reload();
+            }
+        );
+    });
+
+
 </script>
