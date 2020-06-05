@@ -1,5 +1,44 @@
 body {
-    background-color: yellow;
-    position: center;
-    background-position: middle top;
+    background-color: rgb(255, 202, 122);
     }
+
+h1{
+    color: red;
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    display: block; 
+    margin: 0 auto;
+}
+
+textarea {
+    position: absolute;
+    left: 40%;
+    margin-right: -40%;
+    top: 60%;
+    
+}
+
+.text-two{
+    position: absolute;
+    left: 35%;
+    margin-right: -35%;
+}
+
+a{
+    position: absolute;
+    left: 43%;
+    margin-right: -43%;
+    top: 40%;
+}

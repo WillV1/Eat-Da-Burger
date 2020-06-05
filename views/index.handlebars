@@ -7,7 +7,7 @@
         <p>
             {{this.id}}. {{this.burger_name}}
             <button class="change-status" data-id="{{id}}" data-newburger="true">
-                Devour IT
+               DEVOUR IT!
             </button>
         </p>
     </li>
@@ -16,11 +16,11 @@
 
 </ul>
 
-<h1>Burgers devoured</h1>
+
 <ul>
     {{#each burgers}}
     {{#if devoured}}
-    <li>
+    <li class="devoured">
         <p>
             {{this.id}}. {{this.burger_name}}
         </p>
@@ -37,8 +37,8 @@
         <textarea id="burger_name" name="burger_name" rows="8" cols="40"></textarea>
     </div>
 
-    <button type="submit">Submit</button>
-    <label for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
+    <button class ="btn" type="submit">Submit</button>
+    <label class="text-two" for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
 </form>
 
 
