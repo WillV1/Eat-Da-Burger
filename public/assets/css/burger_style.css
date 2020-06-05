@@ -15,25 +15,29 @@ img{
 
 .btn{
     background-color: blue;
-    border-radius: 5px;
     color: white;
     text-align: center;
     display: block; 
     margin: 0 auto;
+    position: absolute;
+    left: 49%;
+    margin-right: -49%;
+    bottom: 20%
 }
 
 textarea {
     position: absolute;
     left: 40%;
     margin-right: -40%;
-    top: 60%;
+    top: 55%;
     
 }
 
 .text-two{
     position: absolute;
-    left: 35%;
-    margin-right: -35%;
+    left: 37%;
+    margin-right: -37%;
+    bottom: 15%
 }
 
 a{
@@ -42,3 +46,29 @@ a{
     margin-right: -43%;
     top: 40%;
 }
+
+.devoured {
+ 
+    width: 140%;
+    background-color: white;
+    opacity: .75;
+    display: block;
+ 
+}
+
+.new{
+    width: 20%;
+    margin: 15px;
+    background-color: white;
+    opacity: .75;
+    display: block;
+}
+
+.devoured-burgers{
+    width: 10%;
+    position: fixed;
+    bottom: 140px;
+    right: 200px;
+  
+}
+

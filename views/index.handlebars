@@ -1,9 +1,10 @@
 <h1>Eat-Da-Burger!</h1>
 
+
 <ul>
     {{#each burgers}}
     {{#unless devoured}}
-    <li>
+    <li class="new">
         <p>
             {{this.id}}. {{this.burger_name}}
             <button class="change-status" data-id="{{id}}" data-newburger="true">
@@ -16,8 +17,7 @@
 
 </ul>
 
-
-<ul>
+<ul class="devoured-burgers">
     {{#each burgers}}
     {{#if devoured}}
     <li class="devoured">
@@ -28,7 +28,6 @@
     {{/if}}
     {{/each}}
 </ul>
-
 
 
 <form class="create-form">
