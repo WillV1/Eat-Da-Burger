@@ -22,14 +22,14 @@ img{
     position: absolute;
     left: 49%;
     margin-right: -49%;
-    bottom: 20%
+    bottom: 10%
 }
 
 textarea {
     position: absolute;
     left: 40%;
     margin-right: -40%;
-    top: 55%;
+    top: 60%;
     
 }
 
@@ -44,7 +44,7 @@ a{
     position: absolute;
     left: 43%;
     margin-right: -43%;
-    top: 40%;
+    top: 45%;
 }
 
 .devoured {
