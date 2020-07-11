@@ -5,13 +5,21 @@ body {
 h1{
     color: red;
     margin-left: 15%
-    /* text-align: center; */
 }
 
 img{
     display: block;
     margin-left: 7.5%;
-    /* margin-right: auto; */
+}
+
+textarea {
+    position: relative;
+    left: 10%;
+}
+
+a{
+    position: relative;
+    padding: 15%;
 }
 
 .burger{
@@ -24,40 +32,19 @@ width: 100%;
     text-align: center;
     display: block; 
     margin: 0 auto;
-    /* position: absolute; */
-    left: 10%;
-    /* margin-right: -49%;
-    bottom: 10%  */
+    margin-left: 35%;
 }
 
-textarea {
-    position: relative;
-    /* text-align: center; */
-    left: 10%;
-    /* margin-right: -40%;
-    top: 60%; */
-    
-}
 
 .text-two{
     position: relative;
     text-align: center;
-    /* left: 37%;
-    margin-right: -37%;
-    bottom: 15% */
 }
 
-a{
-    position: relative;
-    padding: 15%;
-    /* left: 43%;
-    margin-right: -43%;
-    top: 90%; */
-}
 
 .devoured {
  
-    width: 140%;
+    width: 70%;
     background-color: white;
     opacity: .75;
     display: block;
@@ -65,18 +52,10 @@ a{
 }
 
 .new{
-    width: 20%;
-    margin: 15px;
+    width: 70%;
+    /* margin: 15px; */
     background-color: white;
     opacity: .75;
     display: block;
-}
-
-.devoured-burgers{
-    width: 10%;
-    position: fixed;
-    bottom: 140px;
-    right: 200px;
-  
 }
 
