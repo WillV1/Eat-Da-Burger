@@ -1,47 +1,56 @@
-<h1>Eat-Da-Burger!</h1>
-
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li class="new">
-        <p>
-            {{this.id}}. {{this.burger_name}}
-            <button class="change-status" data-id="{{id}}" data-newburger="true">
-               DEVOUR IT!
-            </button>
-        </p>
-    </li>
-    {{/unless}}
-    {{/each}}
-
-</ul>
-
-<ul class="devoured-burgers">
-    {{#each burgers}}
-    {{#if devoured}}
-    <li class="devoured">
-        <p>
-            {{this.id}}. {{this.burger_name}}
-        </p>
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-
-<form class="create-form">
-
-    <div class="form-group">
-        <textarea id="burger_name" name="burger_name" rows="8" cols="40"></textarea>
+<div class="row">
+    <div class="offset-md-4 col-md-4">
+        <img src="burger.png" alt="burger" />
+        <a href='https://pngtree.com/so/burger-clipart'>burger-clipart png from pngtree.com</a>
+        <h1>Eat-Da-Burger!</h1>
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 burger">
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li class="new">
+                <p>
+                    {{this.id}}. {{this.burger_name}}
+                    <button class="change-status" data-id="{{id}}" data-newburger="true">
+                        DEVOUR IT!
+                    </button>
+                </p>
+            </li>
+            {{/unless}}
+            {{/each}}
 
-    <button class ="btn" type="submit">Submit</button>
-    <label class="text-two" for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
-</form>
+        </ul>
+    </div>
+    <div class="col-lg-4">
+        <form class="create-form">
 
+            <div class="form-group">
+                <textarea id="burger_name" name="burger_name" rows="8" cols="40"></textarea>
+            </div>
 
-<script type="text/javascript">
+            <button class="btn" type="submit">Submit</button>
+            <label class="text-two" for="burger_name">Enter a burger you want to eat! Click the "Submit" button.</label>
+        </form>
+
+      
+    </div>
+    <div class="col-lg-3">
+        <ul class="devoured-burgers">
+            {{#each burgers}}
+            {{#if devoured}}
+            <li class="devoured">
+                <p>
+                    {{this.id}}. {{this.burger_name}}
+                </p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{!-- <script type="text/javascript">
 
     $(".change-status").on("click", function (event) {
         let id = $(this).data("id");
@@ -83,4 +92,4 @@
     });
 
 
-</script>
+</script> --}}
