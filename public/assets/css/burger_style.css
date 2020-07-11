@@ -44,7 +44,7 @@ width: 100%;
 
 .devoured {
  
-    width: 70%;
+    width: 80%;
     background-color: white;
     opacity: .75;
     display: block;
@@ -52,7 +52,7 @@ width: 100%;
 }
 
 .new{
-    width: 70%;
+    width: 80%;
     background-color: white;
     opacity: .75;
     display: block;
